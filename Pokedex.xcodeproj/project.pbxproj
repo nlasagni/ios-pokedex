@@ -14,6 +14,7 @@
 		7D55DDB31E33AFEE0081CAED /* PokedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55DDB21E33AFEE0081CAED /* PokedexTests.swift */; };
 		7DD42C811E33C6B8003D7A2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD42C801E33C6B8003D7A2D /* ViewController.swift */; };
 		7DD42C831E33C752003D7A2D /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = 7DD42C821E33C752003D7A2D /* pokemon.csv */; };
+		7DD42C851E33C91E003D7A2D /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD42C841E33C91E003D7A2D /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		7D55DDB41E33AFEE0081CAED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DD42C801E33C6B8003D7A2D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = controller/ViewController.swift; sourceTree = "<group>"; };
 		7DD42C821E33C752003D7A2D /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pokemon.csv; path = resources/pokemon.csv; sourceTree = "<group>"; };
+		7DD42C841E33C91E003D7A2D /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pokemon.swift; path = model/Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		7DD42C7C1E33C633003D7A2D /* model */ = {
 			isa = PBXGroup;
 			children = (
+				7DD42C841E33C91E003D7A2D /* Pokemon.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				7DD42C811E33C6B8003D7A2D /* ViewController.swift in Sources */,
 				7D55DD9E1E33AFEE0081CAED /* AppDelegate.swift in Sources */,
+				7DD42C851E33C91E003D7A2D /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
