@@ -50,6 +50,7 @@ class PokemonViewController: UIViewController,
     }
     
     private func initSearchBar() {
+        searchBar.returnKeyType = UIReturnKeyType.done
         searchBar.delegate = self
     }
     
@@ -94,7 +95,14 @@ class PokemonViewController: UIViewController,
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            view.endEditing(true)
+        }
         renderPokemon()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
     }
 
 }
