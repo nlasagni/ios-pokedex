@@ -26,4 +26,8 @@ class Pokemon {
         return mName
     }
     
+    var imageName: String {
+        return "\(mId)"
+    }
+    
 }
