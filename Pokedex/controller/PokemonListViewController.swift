@@ -38,7 +38,8 @@ class PokemonListViewController: UIViewController,
             musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
             musicPlayer.prepareToPlay()
             musicPlayer.numberOfLoops = -1
-            musicPlayer.play()
+            //TODO
+            //musicPlayer.play()
         } catch let error as NSError {
             print(error.debugDescription)
         }
@@ -91,7 +92,17 @@ class PokemonListViewController: UIViewController,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO
+        performSegue(withIdentifier: "PokemonDetailViewController", sender: pokemonArray[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonDetailViewController" {
+            if let detailViewController = segue.destination as? PokemonDetailViewController {
+                if let pokemon = sender as? Pokemon {
+                    detailViewController.pokemon = pokemon
+                }
+            }
+        }
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

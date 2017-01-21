@@ -19,7 +19,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     }
     
     func renderPokemon(_ pokemon: Pokemon) {
-        pokemonNameLabel.text = pokemon.name.capitalized
+        pokemonNameLabel.text = pokemon.name
         pokemonImage.image = UIImage(named: pokemon.imageName)
     }
     

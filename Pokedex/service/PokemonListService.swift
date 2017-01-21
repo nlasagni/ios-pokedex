@@ -28,7 +28,7 @@ class PokemonListService {
         let rows = parseCSV()
         for row in rows {
             let id = Int(row["id"]!)!
-            let name = row["identifier"]!
+            let name = row["identifier"]!.capitalized
             let pokemon = Pokemon(id: id, name: name)
             cachePokemonArray.append(pokemon)
         }
