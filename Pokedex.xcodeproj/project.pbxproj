@@ -146,7 +146,6 @@
 				TargetAttributes = {
 					7D55DD991E33AFEE0081CAED = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = LZ4R52C839;
 						ProvisioningStyle = Automatic;
 					};
 					7D55DDAD1E33AFEE0081CAED = {
@@ -339,7 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LZ4R52C839;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.Pokedex;
@@ -352,7 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LZ4R52C839;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.Pokedex;
@@ -410,6 +409,7 @@
 				7D55DDB91E33AFEE0081CAED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D55DDBA1E33AFEE0081CAED /* Build configuration list for PBXNativeTarget "PokedexTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +418,7 @@
 				7D55DDBC1E33AFEE0081CAED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
