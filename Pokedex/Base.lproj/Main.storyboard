@@ -60,14 +60,12 @@
                                     <constraint firstItem="K6d-VE-3ta" firstAttribute="centerY" secondItem="1ig-VX-2h3" secondAttribute="centerY" id="p8d-Xs-v89"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BPc-U3-RjM">
+                            <searchBar contentMode="redraw" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="BPc-U3-RjM">
                                 <rect key="frame" x="0.0" y="65" width="375" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ZCG-zd-CHM"/>
                                 </constraints>
-                                <color key="tintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -148,6 +146,7 @@
                     </view>
                     <connections>
                         <outlet property="pokemonCollectionView" destination="9FK-ZB-qyN" id="19t-iV-k0M"/>
+                        <outlet property="searchBar" destination="BPc-U3-RjM" id="08U-3B-6bx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

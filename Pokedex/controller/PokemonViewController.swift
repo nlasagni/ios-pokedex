@@ -9,22 +9,27 @@
 import UIKit
 import AVFoundation
 
-class PokemonViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PokemonViewController: UIViewController,
+                             UICollectionViewDelegate,
+                             UICollectionViewDataSource,
+                             UICollectionViewDelegateFlowLayout,
+                             UISearchBarDelegate {
 
     @IBOutlet weak var pokemonCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     private let pokemonListService = PokemonListService()
     private var pokemonArray = [Pokemon]()
     private var musicPlayer: AVAudioPlayer!
+    private var inSearchMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pokemonCollectionView.delegate = self
-        pokemonCollectionView.dataSource = self
-        pokemonArray = pokemonListService.getPokemon()
-        pokemonCollectionView.reloadData()
         
         initAudio()
+        initCollectionView()
+        initSearchBar()
+        renderPokemon()
     }
     
     private func initAudio() {
@@ -37,6 +42,20 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
         } catch let error as NSError {
             print(error.debugDescription)
         }
+    }
+    
+    private func initCollectionView() {
+        pokemonCollectionView.delegate = self
+        pokemonCollectionView.dataSource = self
+    }
+    
+    private func initSearchBar() {
+        searchBar.delegate = self
+    }
+    
+    private func renderPokemon() {
+        pokemonArray = pokemonListService.getPokemon(searchText: searchBar.text)
+        pokemonCollectionView.reloadData()
     }
     
     @IBAction func onPauseMusicClick(_ sender: UIButton) {
@@ -74,6 +93,9 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
         //TODO
     }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        renderPokemon()
+    }
 
 }
 

@@ -10,18 +10,35 @@ import Foundation
 
 class PokemonListService {
     
-    private var pokemonArray = [Pokemon]()
+    private var cachePokemonArray = [Pokemon]()
+    private var filteredPokemonArray = [Pokemon]()
     
-    func getPokemon() -> [Pokemon] {
-        var pokemonArray = [Pokemon]()
+    func getPokemon(searchText: String?) -> [Pokemon] {
+        if searchText == nil || searchText == "" {
+            return getPokemon()
+        } else {
+            return getFilteredPokemon(searchText: (searchText)!.lowercased())
+        }
+    }
+    
+    private func getPokemon() -> [Pokemon] {
+        if cachePokemonArray.count > 0 {
+            return cachePokemonArray
+        }
         let rows = parseCSV()
         for row in rows {
             let id = Int(row["id"]!)!
             let name = row["identifier"]!
             let pokemon = Pokemon(id: id, name: name)
-            pokemonArray.append(pokemon)
+            cachePokemonArray.append(pokemon)
         }
-        return pokemonArray
+        return cachePokemonArray
+    }
+    
+    private func getFilteredPokemon(searchText: String) -> [Pokemon] {
+        return getPokemon().filter({
+            $0.name.range(of: searchText) != nil
+        })
     }
     
     private func parseCSV() -> [Dictionary<String, String>] {
