@@ -12,19 +12,20 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     @IBOutlet weak var pokemonCollectionView: UICollectionView!
     
+    private let pokemonListService = PokemonListService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         pokemonCollectionView.delegate = self
         pokemonCollectionView.dataSource = self
-        
+        pokemonListService.getPokemon()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 30
     }
     
@@ -32,12 +33,12 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
         return CGSize(width: 105, height: 105)
     }
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = pokemonCollectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCollectionViewCell", for: indexPath) as? PokemonCollectionViewCell {
             
             //TODO
             let pokemon = Pokemon(id: (indexPath.row + 1), name: "Pokemon")
-            cell.renderPokemon(pokemon: pokemon)
+            cell.renderPokemon(pokemon)
             return cell
         } else {
             return UICollectionViewCell()
