@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class PokemonViewController: UIViewController,
+class PokemonListViewController: UIViewController,
                              UICollectionViewDelegate,
                              UICollectionViewDataSource,
                              UICollectionViewDelegateFlowLayout,
