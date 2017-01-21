@@ -13,12 +13,14 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var pokemonCollectionView: UICollectionView!
     
     private let pokemonListService = PokemonListService()
+    private var pokemonArray = [Pokemon]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pokemonCollectionView.delegate = self
         pokemonCollectionView.dataSource = self
-        pokemonListService.getPokemon()
+        pokemonArray = pokemonListService.getPokemon()
+        pokemonCollectionView.reloadData()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -26,7 +28,7 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return self.pokemonArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -35,10 +37,7 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = pokemonCollectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCollectionViewCell", for: indexPath) as? PokemonCollectionViewCell {
-            
-            //TODO
-            let pokemon = Pokemon(id: (indexPath.row + 1), name: "Pokemon")
-            cell.renderPokemon(pokemon)
+            cell.renderPokemon(pokemonArray[indexPath.row])
             return cell
         } else {
             return UICollectionViewCell()
