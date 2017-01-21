@@ -13,8 +13,9 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var pokemonNameLabel: UILabel!
     
-    override func awakeFromNib() {
-        self.layer.cornerRadius = 5.0
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        layer.cornerRadius = 5.0
     }
     
     func renderPokemon(pokemon: Pokemon) {
