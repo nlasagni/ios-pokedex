@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PokemonViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -14,6 +15,7 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     private let pokemonListService = PokemonListService()
     private var pokemonArray = [Pokemon]()
+    private var musicPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,30 @@ class PokemonViewController: UIViewController, UICollectionViewDelegate, UIColle
         pokemonCollectionView.dataSource = self
         pokemonArray = pokemonListService.getPokemon()
         pokemonCollectionView.reloadData()
+        
+        initAudio()
+    }
+    
+    private func initAudio() {
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+    }
+    
+    @IBAction func onPauseMusicClick(_ sender: UIButton) {
+        if musicPlayer.isPlaying {
+            sender.alpha = 0.2
+            musicPlayer.pause()
+        } else {
+            sender.alpha = 1.0
+            musicPlayer.play()
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

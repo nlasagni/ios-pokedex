@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7D14D84F1E33DE0F002CD163 /* CSVParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D14D84E1E33DE0F002CD163 /* CSVParser.swift */; };
 		7D14D8521E33E07E002CD163 /* PokemonListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D14D8511E33E07E002CD163 /* PokemonListService.swift */; };
+		7D14D8551E33F849002CD163 /* Pokemon-Hollow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D14D8531E33F849002CD163 /* Pokemon-Hollow.ttf */; };
+		7D14D8561E33F849002CD163 /* Pokemon-Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D14D8541E33F849002CD163 /* Pokemon-Solid.ttf */; };
+		7D14D85C1E33FA8E002CD163 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7D14D85B1E33FA8E002CD163 /* music.mp3 */; };
 		7D55DD9E1E33AFEE0081CAED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D55DD9D1E33AFEE0081CAED /* AppDelegate.swift */; };
 		7D55DDA31E33AFEE0081CAED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D55DDA11E33AFEE0081CAED /* Main.storyboard */; };
 		7D55DDA51E33AFEE0081CAED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D55DDA41E33AFEE0081CAED /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		7D14D84E1E33DE0F002CD163 /* CSVParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSVParser.swift; path = util/CSVParser.swift; sourceTree = "<group>"; };
 		7D14D8511E33E07E002CD163 /* PokemonListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokemonListService.swift; path = service/PokemonListService.swift; sourceTree = "<group>"; };
+		7D14D8531E33F849002CD163 /* Pokemon-Hollow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pokemon-Hollow.ttf"; path = "resources/Pokemon-Hollow.ttf"; sourceTree = "<group>"; };
+		7D14D8541E33F849002CD163 /* Pokemon-Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pokemon-Solid.ttf"; path = "resources/Pokemon-Solid.ttf"; sourceTree = "<group>"; };
+		7D14D85B1E33FA8E002CD163 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = music.mp3; path = resources/music.mp3; sourceTree = "<group>"; };
 		7D55DD9A1E33AFEE0081CAED /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D55DD9D1E33AFEE0081CAED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D55DDA21E33AFEE0081CAED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 		7DD42C7F1E33C64C003D7A2D /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				7D14D85B1E33FA8E002CD163 /* music.mp3 */,
+				7D14D8531E33F849002CD163 /* Pokemon-Hollow.ttf */,
+				7D14D8541E33F849002CD163 /* Pokemon-Solid.ttf */,
 				7DD42C821E33C752003D7A2D /* pokemon.csv */,
 			);
 			name = resources;
@@ -245,10 +254,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D14D85C1E33FA8E002CD163 /* music.mp3 in Resources */,
 				7D55DDA81E33AFEE0081CAED /* LaunchScreen.storyboard in Resources */,
 				7D55DDA51E33AFEE0081CAED /* Assets.xcassets in Resources */,
 				7DD42C831E33C752003D7A2D /* pokemon.csv in Resources */,
 				7D55DDA31E33AFEE0081CAED /* Main.storyboard in Resources */,
+				7D14D8561E33F849002CD163 /* Pokemon-Solid.ttf in Resources */,
+				7D14D8551E33F849002CD163 /* Pokemon-Hollow.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
