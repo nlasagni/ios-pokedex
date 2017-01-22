@@ -25,7 +25,7 @@ class PokemonListService {
         if cachePokemonArray.count > 0 {
             return cachePokemonArray
         }
-        let rows = parseCSV()
+        let rows = parsePokemonCSV()
         for row in rows {
             let id = Int(row["id"]!)!
             let name = row["identifier"]!.capitalized
@@ -41,7 +41,7 @@ class PokemonListService {
         })
     }
     
-    private func parseCSV() -> [Dictionary<String, String>] {
+    private func parsePokemonCSV() -> [Dictionary<String, String>] {
         let path = Bundle.main.path(forResource: "pokemon", ofType: "csv")!
         do {
             let csv = try CSVParser(contentsOfURL: path)

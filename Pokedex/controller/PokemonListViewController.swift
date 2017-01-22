@@ -99,7 +99,7 @@ class PokemonListViewController: UIViewController,
         if segue.identifier == "PokemonDetailViewController" {
             if let detailViewController = segue.destination as? PokemonDetailViewController {
                 if let pokemon = sender as? Pokemon {
-                    detailViewController.pokemon = pokemon
+                    detailViewController.mPokemon = pokemon
                 }
             }
         }
